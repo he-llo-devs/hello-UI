@@ -3,20 +3,10 @@
 @tailwind utilities;
 
 @layer base {
-	.list-middot > li:not(:last-child)::after {
-		content: "•";
-		margin: 0 15px;
-	}
+}
 
-	.list-comma > li:not(:last-child)::after {
-		content: ",";
-	}
-
-	input[type='number']::-webkit-outer-spin-button,
-	input[type='number']::-webkit-inner-spin-button,
-	input[type='number'] {
-	  -webkit-appearance: none;
-	  -moz-appearance: textfield !important;
-	  margin: 0;
+@layer components {
+	.c-layout-grid {
+		@apply px-5 grid gap-5 grid-cols-4 md:grid-cols-8 lg:grid-cols-12
 	}
 }
