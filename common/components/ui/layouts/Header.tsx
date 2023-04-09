@@ -1,5 +1,6 @@
 import { UserIcon } from "lucide-react";
 import Avatar from "../avatars/Avatar";
+import ExamplePicture from "@/public/images/example-picture.png";
 
 const Header = () => {
 	return (
@@ -12,7 +13,7 @@ const Header = () => {
 					<span className="text-sm">José Baquerizo</span>
 					<span className="text-xs">Admin</span>
 				</div>
-				<Avatar avatarFallback="JB"/>
+				<Avatar src={ExamplePicture} avatarFallback="JB"/>
 			</div>
 		</div>
 	);};

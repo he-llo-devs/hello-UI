@@ -4,4 +4,8 @@
         @apply h-10 w-10 rounded-full;
         @apply flex items-center justify-center;
     }
+
+    .c-avatar-picture {
+        @apply h-10 w-10 rounded-full;
+    }
 }
