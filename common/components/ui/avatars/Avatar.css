@@ -1,0 +1,7 @@
+@layer components {
+    .c-avatar {
+        @apply bg-gray-100 text-gray-600 font-semibold;
+        @apply h-10 w-10 rounded-full;
+        @apply flex items-center justify-center;
+    }
+}

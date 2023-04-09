@@ -1,6 +1,0 @@
-@layer components {
-    .c-sidebar-layout-container {
-        @apply flex max-w-384 mx-auto bg-red-300
-    }
-}
-
