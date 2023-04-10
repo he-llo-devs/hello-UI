@@ -19,7 +19,12 @@ describe("Index page", (): void => {
 		expect(avatar.container.firstChild).toBeInTheDocument();
 	});
 
-	it("renders the avatar component withouth a picture", (): void => {
+	it("renders the avatar component with an external picture", (): void => {
+		const avatar = render(<Avatar src={"https://avatars.githubusercontent.com/u/60028112?v=4"} avatarFallback='JB'/>);
+		expect(avatar.container.firstChild).toBeInTheDocument();
+	});
+
+	it("renders the avatar component without a picture", (): void => {
 		const avatar = render(<Avatar avatarFallback='JB'/>);
 		const fallBackText = avatar.getByText("JB");
 		expect(fallBackText).toBeInTheDocument();

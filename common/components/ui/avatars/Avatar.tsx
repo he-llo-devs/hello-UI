@@ -10,7 +10,7 @@ const Avatar: FC<AvatarProps> = ({ src = "", avatarFallback = "" }) => {
 	return (
 		<div className="c-avatar">
 			{ src 
-				? <Image src={src} alt="" className="c-avatar-picture"/>				
+				? <Image src={src} alt="" className="c-avatar-picture" fill/>				
 				: <span>{ avatarFallback }</span>
 			}
 		</div>
