@@ -1,6 +1,7 @@
 import { UserIcon } from "lucide-react";
 import Avatar from "../avatars/Avatar";
 import ExamplePicture from "@/public/images/example-picture.png";
+import ThemeButton from "../theme/Theme";
 
 const Header = () => {
 	return (
@@ -9,6 +10,7 @@ const Header = () => {
 			</div>
                 
 			<div className="flex items-center space-x-4">
+				<ThemeButton/>
 				<div className="flex flex-col text-right">
 					<span className="text-sm">José Baquerizo</span>
 					<span className="text-xs">Admin</span>
