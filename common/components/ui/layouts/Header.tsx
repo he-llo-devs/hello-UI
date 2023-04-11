@@ -13,7 +13,7 @@ const Header = () => {
 					<span className="text-sm">José Baquerizo</span>
 					<span className="text-xs">Admin</span>
 				</div>
-				<Avatar src={ExamplePicture} avatarFallback="JB"/>
+				<Avatar src={ExamplePicture} avatarFallback="JB" quality={100}/>
 			</div>
 		</div>
 	);};
