@@ -1,6 +1,6 @@
-import { UserIcon } from "lucide-react";
-import Avatar from "../avatars/Avatar";
 import ExamplePicture from "@/public/images/example-picture.png";
+
+import Avatar from "../avatars/Avatar";
 import ThemeButton from "../theme/Theme";
 
 const Header = () => {

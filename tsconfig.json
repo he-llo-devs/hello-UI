@@ -16,8 +16,7 @@
     "incremental": true,
     "baseUrl": ".",
     "paths": {
-      "@/layouts/*": ["common/components/interface/layouts/*"],
-      "@/interface/*": ["common/components/interface/*"],
+      "@/ui/*": ["common/components/ui/*"],
       "@/components/*": ["common/components/*"],
       "@/context/*": ["common/context/*"],
       "@/utils/*": ["common/utils/*"],

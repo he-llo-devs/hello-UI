@@ -1,11 +1,11 @@
 @layer components {
     .c-avatar {
-        @apply bg-gray-100 text-gray-600 font-semibold object-cover;
+        @apply bg-slate-100 dark:bg-slate-800 text-slate-600 dark:text-slate-400 font-semibold object-cover;
         @apply h-10 w-10 rounded-full;
         @apply relative flex items-center justify-center;
     }
 
     .c-avatar-picture {
-        @apply h-10 w-10 rounded-full;
+        @apply w-full h-full rounded-full;
     }
 }
