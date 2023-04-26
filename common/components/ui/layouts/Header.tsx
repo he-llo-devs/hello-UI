@@ -9,7 +9,7 @@ const Header = () => {
 			<div>
 			</div>
                 
-			<div className="flex items-center space-x-4">
+			<div className="flex items-center space-x-4 border-l pl-4">
 				<ThemeButton/>
 				<div className="flex flex-col text-right">
 					<span className="text-sm">José Baquerizo</span>

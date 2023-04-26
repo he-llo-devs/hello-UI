@@ -21,7 +21,12 @@ const ThemeProvider: FC<ThemeProviderProps>  = ({ children }) => {
 		const storagedTheme = localStorage.getItem("theme");
 		const isThemeValid = (storagedTheme === "light" || storagedTheme === "dark");
 		
-		if(isThemeValid) setTheme(storagedTheme);
+		if(isThemeValid) {
+			setTheme(storagedTheme);
+			return;
+		}
+
+		setTheme("light");
 	}, []);
 
 	useEffect(() => {
