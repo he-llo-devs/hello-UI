@@ -1,4 +1,4 @@
-import { ReactNode, FC } from "react";
+import { ReactNode, FC, useState } from "react";
 
 import Footer from "./Footer";
 import Header from "./Header";
@@ -9,11 +9,17 @@ interface Props {
 }
 
 const SideBarLayout: FC<Props> = ({ children }) => {
+	const [isMenuCollapsed, setIsMenuCollapsed] = useState<boolean>(false);
+	
+	const handleCollapse = () => {
+		setIsMenuCollapsed(!isMenuCollapsed);
+	};
+
 	return (
 		<div className="flex max-w-384 mx-auto">
-			<Sidebar/>
+			<Sidebar isMenuCollapsed={isMenuCollapsed}/>
 			<div className="w-full px-10 flex flex-col justify-between">
-				<Header/>
+				<Header handleCollapse={ handleCollapse } isMenuCollapsed={isMenuCollapsed}/>
 				<main className="grow min-h-screen md:min-h-0">
 					{children}
 				</main>

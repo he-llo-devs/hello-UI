@@ -1,7 +1,12 @@
 import { ChevronDownIcon } from "lucide-react";
-import { MouseEvent, useState } from "react";
+import { FC, MouseEvent, useState } from "react";
 
-const Sidebar = () => {
+interface Props {
+	//handleCollapse: Function;
+	isMenuCollapsed: boolean;
+}
+
+const Sidebar: FC<Props> = ({isMenuCollapsed}) => {
 	const [isExpanded, setIsExpanded] = useState(true);
 
 	const [dropdown, setDropdown] = useState({
@@ -31,7 +36,7 @@ const Sidebar = () => {
 	};
 
 	return (
-		<div className="h-screen sticky border-r top-0 z-30">
+		<div className={`h-screen sticky border-r border-zinc-200 dark:border-zinc-800 z-30`}>
 			<div className={`hidden md:flex md:flex-col md:justify-between h-full bg-white dark:bg-gray-800 transition-all duration-300 space-y-2 ${isExpanded ? ' w-60' : 'w-60 sm:w-20'} ${!isExpanded ? 'top-0 -left-64 sm:left-0' : null}`}>
 				<div className="min-h-[80px] flex items-center">
 					<h4 className="whitespace-nowrap">✨ {isExpanded ? "Hello UI": ""}</h4>
