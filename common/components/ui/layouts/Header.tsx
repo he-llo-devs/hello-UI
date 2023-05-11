@@ -16,7 +16,7 @@ const Header: FC<Props> = ({ handleCollapse, isMenuCollapsed }) => {
 	return (
 		<div className="h-20 flex justify-between items-center">
 			<div>
-				<button onClick={ () => handleCollapse() } className="z-50">
+				<button onClick={ () => handleCollapse() } className="md:hidden z-50">
 					{ isMenuCollapsed 
 						? <XIcon/>
 						: <MenuIcon/>

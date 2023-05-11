@@ -5,8 +5,8 @@ const Footer = () => {
 	const year = date.getFullYear();
 
 	return (
-		<div className="px-5 md:px-10 h-14 flex justify-between items-center">
-			<p>© { year } he-llo.  Todos los derechos reservados</p>
+		<div className="h-14 flex justify-between items-center">
+			<p>© {year} he-llo.  Todos los derechos reservados</p>
 			<HeartIcon className="text-primary"/>
 		</div>
 	);

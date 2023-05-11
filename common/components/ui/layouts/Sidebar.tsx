@@ -1,12 +1,12 @@
-import { ChevronDownIcon } from "lucide-react";
+import { ChevronDownIcon, MenuIcon, XIcon } from "lucide-react";
 import { FC, MouseEvent, useState } from "react";
 
 interface Props {
-	//handleCollapse: Function;
+	handleCollapse: Function;
 	isMenuCollapsed: boolean;
 }
 
-const Sidebar: FC<Props> = ({isMenuCollapsed}) => {
+const Sidebar: FC<Props> = ({isMenuCollapsed, handleCollapse}) => {
 	const [isExpanded, setIsExpanded] = useState(true);
 
 	const [dropdown, setDropdown] = useState({
@@ -36,17 +36,21 @@ const Sidebar: FC<Props> = ({isMenuCollapsed}) => {
 	};
 
 	return (
-		<div className={`h-screen sticky border-r border-zinc-200 dark:border-zinc-800 z-30`}>
-			<div className={`hidden md:flex md:flex-col md:justify-between h-full bg-white dark:bg-gray-800 transition-all duration-300 space-y-2 ${isExpanded ? ' w-60' : 'w-60 sm:w-20'} ${!isExpanded ? 'top-0 -left-64 sm:left-0' : null}`}>
-				<div className="min-h-[80px] flex items-center">
-					<h4 className="whitespace-nowrap">✨ {isExpanded ? "Hello UI": ""}</h4>
-				</div>
-                
-				{/*Sidebar toggle*/}
-				<button className="absolute focus:outline-none -right-3 top-14 bg-gray-800 dark:bg-gray-700 rounded-full shadow-md w-6 h-6 flex items-center justify-center" onClick={handleisExpanded}>
-					<ChevronDownIcon size={16} className={`transition-all duration-300 transform text-white ${isExpanded ? 'rotate-90' : '-rotate-90'}`}/>
+		<div className={`c-sidebar ${isMenuCollapsed ? "" : "-translate-x-full"} ${isExpanded ? 'w-10/12 md:w-60' : 'w-20'}`}>
+			<div className="min-h-[80px] mx-5 flex justify-between md:justify-center items-center">
+				<h4 className="whitespace-nowrap">✨ {isExpanded ? "Hello UI": ""}</h4>
+				<button onClick={ () => handleCollapse() } className="md:hidden z-50">
+					{ isMenuCollapsed 
+						? <XIcon/>
+						: <MenuIcon/>
+					}
 				</button>
 			</div>
+					
+			{/*Sidebar toggle*/}
+			<button className="hidden md:flex w-6 h-6 items-center justify-center absolute focus:outline-none -right-3 top-14 bg-gray-800 dark:bg-gray-700 rounded-full shadow-md" onClick={handleisExpanded}>
+				<ChevronDownIcon size={16} className={`transition-all duration-300 transform text-white ${isExpanded ? 'rotate-90' : '-rotate-90'}`}/>
+			</button>
 		</div>
 	);
 };
