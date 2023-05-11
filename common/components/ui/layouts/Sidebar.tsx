@@ -1,4 +1,4 @@
-import { ChevronDownIcon, MenuIcon, XIcon } from "lucide-react";
+import { ChevronDownIcon, MenuIcon, PalmtreeIcon, XIcon } from "lucide-react";
 import { FC, MouseEvent, useState } from "react";
 
 interface Props {
@@ -37,9 +37,12 @@ const Sidebar: FC<Props> = ({isMenuCollapsed, handleCollapse}) => {
 
 	return (
 		<div className={`c-sidebar ${isMenuCollapsed ? "" : "-translate-x-full"} ${isExpanded ? 'w-10/12 md:w-60' : 'w-20'}`}>
-			<div className="min-h-[80px] mx-5 flex justify-between md:justify-center items-center">
-				<h4 className="whitespace-nowrap">✨ {isExpanded ? "Hello UI": ""}</h4>
-				<button onClick={ () => handleCollapse() } className="md:hidden z-50">
+			<div className="c-sidebar-header">
+				<h4 className={`whitespace-nowrap flex ${isExpanded ? "space-x-2" : ""}`}>
+					<PalmtreeIcon/> 
+					<span className="font-semibold">{isExpanded ? "Hello UI": ""}</span>
+				</h4>
+				<button onClick={ () => handleCollapse() } className="md:hidden">
 					{ isMenuCollapsed 
 						? <XIcon/>
 						: <MenuIcon/>
@@ -48,8 +51,8 @@ const Sidebar: FC<Props> = ({isMenuCollapsed, handleCollapse}) => {
 			</div>
 					
 			{/*Sidebar toggle*/}
-			<button className="hidden md:flex w-6 h-6 items-center justify-center absolute focus:outline-none -right-3 top-14 bg-gray-800 dark:bg-gray-700 rounded-full shadow-md" onClick={handleisExpanded}>
-				<ChevronDownIcon size={16} className={`transition-all duration-300 transform text-white ${isExpanded ? 'rotate-90' : '-rotate-90'}`}/>
+			<button className="c-sidebar-toggle-button" onClick={handleisExpanded}>
+				<ChevronDownIcon size={16} className={`c-sidebar-toggle-icon ${isExpanded ? 'rotate-90' : '-rotate-90'}`}/>
 			</button>
 		</div>
 	);
