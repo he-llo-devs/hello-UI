@@ -1,0 +1,14 @@
+@layer components {
+    .c-header {
+        @apply h-20 flex justify-between items-center;
+    }
+
+    .c-header-left-side {
+
+    }
+
+    .c-header-right-side {
+        @apply flex items-center space-x-4 pl-4;
+        @apply md:border-l  border-zinc-200 dark:border-zinc-800;
+    }
+}

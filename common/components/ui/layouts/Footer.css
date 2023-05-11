@@ -1,0 +1,5 @@
+@layer components {
+    .c-footer {
+        @apply h-14 flex justify-between items-center;
+    }
+}

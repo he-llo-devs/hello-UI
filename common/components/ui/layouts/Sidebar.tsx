@@ -36,7 +36,7 @@ const Sidebar: FC<Props> = ({isMenuCollapsed, handleCollapse}) => {
 	};
 
 	return (
-		<div className={`c-sidebar ${isMenuCollapsed ? "" : "-translate-x-full"} ${isExpanded ? 'w-10/12 md:w-60' : 'w-20'}`}>
+		<div className={`c-sidebar ${isMenuCollapsed ? "" : "-translate-x-full"} ${isExpanded ? 'w-10/12 md:w-64' : 'w-20'}`}>
 			<div className="c-sidebar-header">
 				<h4 className={`whitespace-nowrap flex ${isExpanded ? "space-x-2" : ""}`}>
 					<PalmtreeIcon/> 

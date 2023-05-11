@@ -14,8 +14,8 @@ interface Props {
 const Header: FC<Props> = ({ handleCollapse, isMenuCollapsed }) => {
 
 	return (
-		<div className="h-20 flex justify-between items-center">
-			<div>
+		<div className="c-header">
+			<div className="c-header-left-side">
 				<button onClick={ () => handleCollapse() } className="md:hidden z-50">
 					{ isMenuCollapsed 
 						? <XIcon/>
@@ -24,7 +24,7 @@ const Header: FC<Props> = ({ handleCollapse, isMenuCollapsed }) => {
 				</button>
 			</div>
                 
-			<div className="flex items-center space-x-4 md:border-l pl-4 border-zinc-200 dark:border-zinc-800">
+			<div className="c-header-right-side">
 				<ThemeButton/>
 				<div className="flex flex-col text-right">
 					<span className="text-sm">José Baquerizo</span>

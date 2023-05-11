@@ -1,5 +1,7 @@
 @import "../common/components/ui/avatars/Avatar.css";
 @import "../common/components/ui/layouts/Sidebar.css";
+@import "../common/components/ui/layouts/Header.css";
+@import "../common/components/ui/layouts/Footer.css";
 
 @tailwind base;
 @tailwind components;
