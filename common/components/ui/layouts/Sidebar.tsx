@@ -1,48 +1,25 @@
-import { ChevronDownIcon, MenuIcon, PalmtreeIcon, XIcon } from "lucide-react";
+import { ChevronDownIcon, Coins, CoinsIcon, HomeIcon, LayoutGridIcon, MenuIcon, PalmtreeIcon, WalletIcon, XIcon } from "lucide-react";
 import { FC, MouseEvent, useState } from "react";
+import NavItem from "../navigation/NavItem";
 
 interface Props {
 	handleCollapse: Function;
+	handleExpanded: Function;
 	isMenuCollapsed: boolean;
+	isExpanded: boolean;
 }
 
-const Sidebar: FC<Props> = ({isMenuCollapsed, handleCollapse}) => {
-	const [isExpanded, setIsExpanded] = useState(true);
-
-	const [dropdown, setDropdown] = useState({
-		activeItem: '',
-		activeClass: 'bg-gray-800 text-gray-200',
-		expandedClass: 'border-l border-gray-200 ml-4 pl-4',
-		shrinkedClass: 'sm:absolute top-0 left-20 sm:shadow-md sm:z-10 sm:bg-white sm:rounded-lg sm:p-4 border-l sm:border-none border-gray-400 ml-4 pl-4 sm:ml-0 w-48 dark:bg-gray-800',
-	});
-
-	const handleisExpanded = () => {
-		setIsExpanded(!isExpanded);
-	};
-
-	const handleDropdown = (e: MouseEvent) => {
-		if(dropdown.activeItem == e.currentTarget.id) {
-			setDropdown({
-				...dropdown,
-				activeItem: ''
-			});
-			return;
-		}
-
-		setDropdown({
-			...dropdown,
-			activeItem: e.currentTarget.id
-		});
-	};
+const Sidebar: FC<Props> = ({isMenuCollapsed, handleCollapse, isExpanded, handleExpanded}) => {
+	
 
 	return (
-		<div className={`c-sidebar ${isMenuCollapsed ? "" : "-translate-x-full"} ${isExpanded ? 'w-10/12 md:w-64' : 'w-20'}`}>
-			<div className="c-sidebar-header">
-				<h4 className={`whitespace-nowrap flex ${isExpanded ? "space-x-2" : ""}`}>
-					<PalmtreeIcon/> 
+		<div className={`c-sidebar ${isMenuCollapsed ? "" : "-translate-x-full"} ${isExpanded ? 'w-10/12 md:w-80' : 'w-32'}`}>
+			<div className={`c-sidebar-header ${!isExpanded ? "md:justify-center" : ""}`}>
+				<h4 className={`whitespace-nowrap flex text-xl ${isExpanded ? "space-x-2" : ""}`}>
+					<PalmtreeIcon size={28}/> 
 					<span className="font-semibold">{isExpanded ? "Hello UI": ""}</span>
 				</h4>
-				<button onClick={ () => handleCollapse() } className="md:hidden">
+				<button onClick={() => handleCollapse()} className="md:hidden">
 					{ isMenuCollapsed 
 						? <XIcon/>
 						: <MenuIcon/>
@@ -50,10 +27,20 @@ const Sidebar: FC<Props> = ({isMenuCollapsed, handleCollapse}) => {
 				</button>
 			</div>
 					
-			{/*Sidebar toggle*/}
-			<button className="c-sidebar-toggle-button" onClick={handleisExpanded}>
+			<button className="c-sidebar-toggle-button" onClick={() => handleExpanded()}>
 				<ChevronDownIcon size={16} className={`c-sidebar-toggle-icon ${isExpanded ? 'rotate-90' : '-rotate-90'}`}/>
 			</button>
+
+			<div className="c-sidebar-navigation">
+				<div className={!isExpanded ? "flex flex-col items-center" : ""}>
+					<span className="text-zinc-500 dark:text-zinc-400">Dashboard</span>
+					<NavItem/>
+				</div>
+			</div>
+
+			<div>
+
+			</div>
 		</div>
 	);
 };

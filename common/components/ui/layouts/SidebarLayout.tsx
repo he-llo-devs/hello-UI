@@ -9,6 +9,7 @@ interface Props {
 }
 
 const SideBarLayout: FC<Props> = ({ children }) => {
+	const [isExpanded, setIsExpanded] = useState<boolean>(true);
 	const [isMenuCollapsed, setIsMenuCollapsed] = useState<boolean>(false);
 	const [screenWidth, setScreenWidth] = useState<number>(typeof window != "undefined" ? window.innerWidth : 0);
 
@@ -19,16 +20,24 @@ const SideBarLayout: FC<Props> = ({ children }) => {
 	}, []);
 
 	useEffect(() => {
-		if(screenWidth > 768) setIsMenuCollapsed(true);
+		if(screenWidth > 768) {
+			setIsMenuCollapsed(true);
+		} else {
+			setIsExpanded(true);
+		}
 	}, [screenWidth]);
 
 	const handleCollapse = () => {
 		setIsMenuCollapsed(!isMenuCollapsed);
 	};
 
+	const handleExpanded = () => {
+		setIsExpanded(!isExpanded);
+	};
+
 	return (
 		<div className="block md:flex max-w-384 mx-auto">
-			<Sidebar handleCollapse={handleCollapse} isMenuCollapsed={isMenuCollapsed}/>
+			<Sidebar handleCollapse={handleCollapse} isMenuCollapsed={isMenuCollapsed} isExpanded={isExpanded} handleExpanded={handleExpanded}/>
 			<div className="w-full px-5 md:px-10 flex flex-col justify-between">
 				<Header handleCollapse={handleCollapse} isMenuCollapsed={isMenuCollapsed}/>
 				<main className="grow min-h-screen md:min-h-0">

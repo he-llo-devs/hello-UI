@@ -6,17 +6,20 @@
     }
 
     .c-sidebar-header {
-        @apply min-h-[80px] mx-5 flex justify-between md:justify-center items-center;
+        @apply min-h-[80px] mx-5 flex justify-between items-center;
     }
 
     .c-sidebar-toggle-button {
         @apply absolute -right-3 top-14;
         @apply w-6 h-6 hidden md:flex items-center justify-center;
-        @apply focus:outline-none bg-gray-800 dark:bg-gray-700 rounded-full shadow-md;        
+        @apply focus:outline-none bg-zinc-800 dark:bg-zinc-700 rounded-full shadow-md;        
     }
 
     .c-sidebar-toggle-icon {
         @apply transition-all duration-300 transform text-white;
     }
 
+    .c-sidebar-navigation {
+        @apply grow p-4 space-y-8 font-medium;
+    }
 }
