@@ -20,6 +20,6 @@
     }
 
     .c-sidebar-navigation {
-        @apply grow p-4 space-y-8 font-medium;
+        @apply grow p-4 space-y-8 font-medium overflow-y-auto;
     }
 }

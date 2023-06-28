@@ -36,7 +36,7 @@ const SideBarLayout: FC<Props> = ({ children }) => {
 	};
 
 	return (
-		<div className="block md:flex max-w-384 mx-auto">
+		<div className="block md:flex mx-auto">
 			<Sidebar handleCollapse={handleCollapse} isMenuCollapsed={isMenuCollapsed} isExpanded={isExpanded} handleExpanded={handleExpanded}/>
 			<div className="w-full px-5 md:px-10 flex flex-col justify-between">
 				<Header handleCollapse={handleCollapse} isMenuCollapsed={isMenuCollapsed}/>

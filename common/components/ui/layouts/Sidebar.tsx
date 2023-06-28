@@ -1,6 +1,7 @@
-import { ChevronDownIcon, Coins, CoinsIcon, HomeIcon, LayoutGridIcon, MenuIcon, PalmtreeIcon, WalletIcon, XIcon } from "lucide-react";
-import { FC, MouseEvent, useState } from "react";
+import { ChevronDownIcon, MenuIcon, PalmtreeIcon, XIcon } from "lucide-react";
+import { FC, Fragment, MouseEvent, useState } from "react";
 import NavItem from "../navigation/NavItem";
+import MenuItems from "@/utils/MenuItems";
 
 interface Props {
 	handleCollapse: Function;
@@ -10,7 +11,7 @@ interface Props {
 }
 
 const Sidebar: FC<Props> = ({isMenuCollapsed, handleCollapse, isExpanded, handleExpanded}) => {
-	
+	const menu = MenuItems();
 
 	return (
 		<div className={`c-sidebar ${isMenuCollapsed ? "" : "-translate-x-full"} ${isExpanded ? 'w-10/12 md:w-80' : 'w-32'}`}>
@@ -33,8 +34,16 @@ const Sidebar: FC<Props> = ({isMenuCollapsed, handleCollapse, isExpanded, handle
 
 			<div className="c-sidebar-navigation">
 				<div className={!isExpanded ? "flex flex-col items-center" : ""}>
-					<span className="text-zinc-500 dark:text-zinc-400">Dashboard</span>
-					<NavItem/>
+					{ menu.map((element, idx) => (
+						<Fragment key={idx}>
+							<span className="text-zinc-500 dark:text-zinc-400">{ element.section }</span>
+							<div className="my-4">
+								{ element.items.map((item, idx) => (
+									<NavItem key={idx} isExpanded={ isExpanded } label={item.name} Icon={item.icon} url={item.path}/>
+								))}
+							</div>
+						</Fragment>
+					))}
 				</div>
 			</div>
 
