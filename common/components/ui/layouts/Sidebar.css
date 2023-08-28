@@ -6,7 +6,7 @@
     }
 
     .c-sidebar-header {
-        @apply min-h-[80px] mx-5 flex justify-between items-center;
+        @apply min-h-[80px] mx-6 flex justify-between items-center;
     }
 
     .c-sidebar-toggle-button {
@@ -20,6 +20,6 @@
     }
 
     .c-sidebar-navigation {
-        @apply grow p-4 space-y-8 font-medium overflow-y-auto;
+        @apply grow p-6 space-y-8 font-medium overflow-y-auto;
     }
 }

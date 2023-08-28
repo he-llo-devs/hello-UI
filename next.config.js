@@ -9,6 +9,16 @@ const nextConfig = {
 				hostname: "avatars.githubusercontent.com",
 			}
 		]
+	},
+
+	async redirects() {
+		return [
+			{
+				source: '/',
+				destination: '/overview',
+				permanent: true
+			}
+		];
 	}
 
 };
