@@ -1,17 +1,58 @@
 import { 
 	CircleIcon, 
-	HomeIcon 
+	GripIcon, 
+	HomeIcon, 
+	LayoutDashboardIcon,
+	LoaderIcon,
+	Paintbrush,
+	PilcrowIcon,
+	StretchHorizontalIcon
 } from "lucide-react";
 
 const MenuItems = () => {
 	return [
 		{
-			section: 'Dashboard',
+			section: 'Home',
 			items: [
 				{
 					name: 'Overview',
-					path: '/',
+					path: '/overview',
 					icon: HomeIcon
+				}
+			]
+		},
+		{
+			section: 'Design System',
+			items: [
+				{
+					name: 'Typography',
+					path: '/design-system/typography',
+					icon: PilcrowIcon
+				},
+				{
+					name: 'Colors',
+					path: '/design-system/color',
+					icon: Paintbrush
+				},
+				{
+					name: 'Spacing',
+					path: '/design-system/spacing',
+					icon: LayoutDashboardIcon
+				},
+				{
+					name: 'Shadows',
+					path: '/design-system/shadows',
+					icon: LoaderIcon
+				},
+				{
+					name: 'Borders',
+					path: '/design-system/borders',
+					icon: StretchHorizontalIcon
+				},
+				{
+					name: 'Opacity',
+					path: '/design-system/opacity',
+					icon: GripIcon
 				}
 			]
 		},
