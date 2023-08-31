@@ -1,4 +1,5 @@
 import { 
+	AlertCircleIcon,
 	CircleIcon, 
 	GripIcon, 
 	HomeIcon, 
@@ -6,7 +7,8 @@ import {
 	LoaderIcon,
 	Paintbrush,
 	PilcrowIcon,
-	StretchHorizontalIcon
+	StretchHorizontalIcon,
+	UserIcon
 } from "lucide-react";
 
 const MenuItems = () => {
@@ -22,7 +24,7 @@ const MenuItems = () => {
 			]
 		},
 		{
-			section: 'Design System',
+			section: 'Core',
 			items: [
 				{
 					name: 'Typography',
@@ -87,6 +89,11 @@ const MenuItems = () => {
 				{
 					name: 'Card',
 					path: '/components/card',
+					icon: CircleIcon
+				},
+				{
+					name: 'Tabs',
+					path: '/components/tabs',
 					icon: CircleIcon
 				}
 			]

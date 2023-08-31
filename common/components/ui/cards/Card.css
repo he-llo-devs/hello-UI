@@ -1,0 +1,10 @@
+@layer components {
+    .c-card {
+        @apply rounded-lg w-full;
+        @apply bg-white dark:bg-zinc-800 shadow-sm shadow-transparent/5;
+    }
+
+    .c-card-content {
+        @apply p-5;
+    }
+}

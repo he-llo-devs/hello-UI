@@ -1,6 +1,5 @@
 import SideBarLayout from '@/components/ui/layouts/SidebarLayout';
 import Card from '@/ui/cards/Card';
-import CardContent from '@/ui/cards/CardContent';
 import Head from 'next/head';
 
 const DesignSystem = () => {
@@ -13,7 +12,7 @@ const DesignSystem = () => {
 			</Head>
 			<SideBarLayout>
 				<Card>
-					<CardContent>
+					<Card.Content>
 						<div>
 							<h1 className='text-4xl font-bold'>Typography</h1>
 							<div className='py-4'>
@@ -26,7 +25,13 @@ const DesignSystem = () => {
 								<p>We use <b>Inter</b> as default font, but you can also select your own font depending on your brand! For more advanced configuration, check out the theme customization section.</p>
 							</div>
 						</div>
-					</CardContent>
+						<div className='py-4'>
+							<h1 className='text-3xl font-bold'>Font size</h1>
+							<div className='py-2'>
+								<p>We use the font size rules defined by default by <b>Tailwindcss</b></p>
+							</div>
+						</div>
+					</Card.Content>
 				</Card>
 			</SideBarLayout>
 		</>

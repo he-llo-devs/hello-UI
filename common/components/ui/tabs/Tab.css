@@ -1,0 +1,26 @@
+@layer components {
+    .c-tab-list {
+        @apply flex space-x-1 p-1;
+        @apply rounded-md bg-slate-100 dark:bg-zinc-900;
+    }
+
+    .c-tab-item {
+        @apply w-full rounded-lg py-2.5 text-sm font-medium focus:outline-none;
+    }
+
+    .c-tab-item-selected {
+        @apply bg-white shadow-sm dark:bg-zinc-800;
+    }
+
+    .c-tab-item-no-selected {
+        @apply hover:bg-slate-200/50 dark:hover:bg-zinc-700/20;
+    }
+    
+    .c-tab-panels {
+        @apply mt-2;
+    }
+
+    .c-tab-panel {
+        @apply rounded-md bg-white dark:bg-zinc-800 p-3 focus:outline-none;
+    }
+}
