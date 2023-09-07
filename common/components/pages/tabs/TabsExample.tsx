@@ -1,14 +1,4 @@
-import Head from "next/head";
-import { useState, useEffect } from "react";
-import SideBarLayout from "@/ui/layouts/SidebarLayout";
-
-import SyntaxHighlighter from 'react-syntax-highlighter';
-import { nord } from "react-syntax-highlighter/dist/cjs/styles/hljs";
-import { CopyIcon } from "lucide-react";
-import TabsExample from "@/components/pages/tabs/TabsExample";
-
-const Tabs = () => {
-	const code = `import Tab from "@/ui/tabs/Tab";
+import Tab from "@/ui/tabs/Tab";
 import { useState } from "react";
 
 const TabsExample = () => {
@@ -106,44 +96,5 @@ const TabsExample = () => {
 		</Tab.Group>
 	);
 };
-	
-export default TabsExample;`;
-
-	return (
-		<>
-			<Head>
-				<title>Hello UI - Tabs</title>
-				<meta name="description" content="Tabs Component, he-llo UI" />
-				<meta name="viewport" content="width=device-width, initial-scale=1" />
-			</Head>
-			<SideBarLayout>
-				<div className="max-w-4xl mx-auto">
-					<h1 className='text-3xl font-bold'>Tab Component</h1>
-					<p>A set of layered sections of content known as tab panels that are displayed one at a time.</p>
-					<div className="my-8 px-32 py-24 border bg-white dark:bg-zinc-800 dark:border-zinc-700 rounded-md">
-						<TabsExample/>
-					</div>
-					<h1 className='text-2xl font-bold'>Usage</h1>
-					<div className="relative my-8 border dark:border-zinc-700 rounded-md overflow-x-auto">
-						<button onClick={() => {navigator.clipboard.writeText(code);}} className="absolute z-10 top-0 right-0 m-4 p-2 hover:bg-zinc-700 rounded-md transition-colors">
-							<CopyIcon size="18" className="text-white"/>
-						</button>
-						<SyntaxHighlighter
-							language='jsx'
-							showLineNumbers={true}
-							style={nord}
-							customStyle={{
-								padding: "25px",
-								backgroundColor: "#27272a"
-							}}
-						>
-							{code}
-						</SyntaxHighlighter>
-					</div>
-				</div>
-			</SideBarLayout>
-		</>
-	);
-};
  
-export default Tabs;
+export default TabsExample;

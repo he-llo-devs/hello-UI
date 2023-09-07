@@ -1,6 +1,6 @@
 @layer components {
     .c-sidebar {
-        @apply fixed md:relative z-30;
+        @apply fixed md:sticky top-0 z-30;
         @apply h-screen md:flex md:flex-col md:justify-between space-y-2;
         @apply transition-all duration-300 bg-white dark:bg-zinc-800 rounded-r-lg border-r border-zinc-200 dark:border-zinc-800;
     }
