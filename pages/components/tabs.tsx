@@ -120,7 +120,7 @@ export default TabsExample;`;
 				<div className="max-w-4xl mx-auto">
 					<h1 className='text-3xl font-bold'>Tab Component</h1>
 					<p>A set of layered sections of content known as tab panels that are displayed one at a time.</p>
-					<div className="my-8 px-32 py-24 border bg-white dark:bg-zinc-800 dark:border-zinc-700 rounded-md">
+					<div className="my-8 px-8 py-16 md:px-32 md:py-24 border bg-white dark:bg-zinc-800 dark:border-zinc-700 rounded-md">
 						<TabsExample/>
 					</div>
 					<h1 className='text-2xl font-bold'>Usage</h1>
@@ -133,7 +133,7 @@ export default TabsExample;`;
 							showLineNumbers={true}
 							style={nord}
 							customStyle={{
-								padding: "25px",
+								paddingTop: "20px",
 								backgroundColor: "#27272a"
 							}}
 						>
