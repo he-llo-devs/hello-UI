@@ -17,7 +17,7 @@
     }
     
     .c-tab-list-minimal {
-        @apply flex border-b border-zinc-300;
+        @apply flex border-b border-zinc-300 dark:border-zinc-700;
     }
     
     .c-tab-item-minimal {
@@ -25,7 +25,7 @@
     }
 
     .c-tab-item-selected-minimal {
-        @apply border-b-2 border-zinc-700;
+        @apply border-b-2 border-zinc-700 dark:border-white;
     }
 
     .c-tab-item-no-selected-minimal {
@@ -36,8 +36,12 @@
         @apply mt-2;
     }
 
+    .c-tab-panels-minimal {
+        @apply mt-4;
+    }
+
     .c-tab-panel {
-        @apply rounded-md bg-white dark:bg-zinc-800 p-3 focus:outline-none;
+        @apply rounded-md bg-white dark:bg-zinc-800 focus:outline-none;
     }
 
 }

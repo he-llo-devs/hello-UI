@@ -1,12 +1,13 @@
 import Head from "next/head";
-import { useState, useEffect } from "react";
-import SideBarLayout from "@/ui/layouts/SidebarLayout";
 
 import SyntaxHighlighter from 'react-syntax-highlighter';
 import { nord } from "react-syntax-highlighter/dist/cjs/styles/hljs";
-import { CopyIcon } from "lucide-react";
-import TabsExample from "@/components/pages/tabs/TabsExample";
+
 import Tab from "@/ui/tabs/Tab";
+import CodeCopyButton from "@/ui/buttons/CopyButton";
+import SideBarLayout from "@/ui/layouts/SidebarLayout";
+import TabsExample from "@/components/pages/tabs/TabsExample";
+
 
 const Tabs = () => {
 	const code = `import Tab from "@/ui/tabs/Tab";
@@ -130,9 +131,7 @@ export default TabsExample;`;
 					</div>
 					<h1 className='text-2xl font-bold'>Usage</h1>
 					<div className="relative my-8 border dark:border-zinc-700 rounded-md overflow-x-auto">
-						<button onClick={() => {navigator.clipboard.writeText(code);}} className="absolute z-10 top-0 right-0 m-4 p-2 hover:bg-zinc-700 rounded-md transition-colors">
-							<CopyIcon size="18" className="text-white"/>
-						</button>
+						<CodeCopyButton textToCopy={code}/>
 						<SyntaxHighlighter
 							language='jsx'
 							showLineNumbers={true}

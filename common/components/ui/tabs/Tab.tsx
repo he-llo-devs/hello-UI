@@ -23,6 +23,9 @@ const config = {
 		},
 		list: {
 			className: 'c-tab-list'
+		},
+		panels: {
+			className: 'c-tab-panels'
 		}
 	},
 	minimal: {
@@ -33,6 +36,9 @@ const config = {
 		},
 		list: {
 			className: 'c-tab-list-minimal'
+		},
+		panels: {
+			className: 'c-tab-panels-minimal'
 		}
 	}
 };
@@ -66,7 +72,7 @@ const List = ({className, children}: Props) => {
 
 const Panels = ({className, children}: Props) => {
 	return (
-		<Tabs.Panels className={`c-tab-panels ${className}`}>
+		<Tabs.Panels className={`${config[selectedStyle].panels.className} ${className}`}>
 			{children}
 		</Tabs.Panels>
 	);
