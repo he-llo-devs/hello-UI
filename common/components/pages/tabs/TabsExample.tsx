@@ -54,7 +54,7 @@ const TabsExample = () => {
 	});
 
 	return (
-		<Tab.Group style="minimal">
+		<Tab.Group style="default">
 			<Tab.List>
 				{Object.keys(categories).map((category) => (
 					<Tab key={category}>

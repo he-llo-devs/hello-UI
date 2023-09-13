@@ -122,13 +122,26 @@ export default TabsExample;`;
 				<div className="max-w-4xl mx-auto">
 					<h1 className='text-3xl font-bold'>Tab Component</h1>
 					<p>A set of layered sections of content known as tab panels that are displayed one at a time.</p>
-					<Tab.Group>
+					<div className="my-4">
+						<Tab.Group style="minimal">
+							<Tab.List>
+								<Tab>Preview</Tab>
+								<Tab>Code</Tab>
+							</Tab.List>
+							<Tab.Panels>
+								<Tab.Panel>
+									<div className="my-8 px-8 py-16 md:px-32 md:py-24 border bg-white dark:bg-zinc-800 dark:border-zinc-700 rounded-md">
+										<TabsExample/>
+									</div>
+								</Tab.Panel>
+								<Tab.Panel>
 
-					</Tab.Group>
+								</Tab.Panel>
+							</Tab.Panels>
+						</Tab.Group>
 
-					<div className="my-8 px-8 py-16 md:px-32 md:py-24 border bg-white dark:bg-zinc-800 dark:border-zinc-700 rounded-md">
-						<TabsExample/>
 					</div>
+
 					<h1 className='text-2xl font-bold'>Usage</h1>
 					<div className="relative my-8 border dark:border-zinc-700 rounded-md overflow-x-auto">
 						<CodeCopyButton textToCopy={code}/>
