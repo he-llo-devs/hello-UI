@@ -1,20 +1,54 @@
 import { Tab as Tabs } from "@headlessui/react";
-import { ReactNode, useState } from "react";
+import { ReactNode } from "react";
+
+type SupportedStyles = 'default' | 'minimal'
 
 interface Props {
 	children: ReactNode;
 	className?: string;
 }
 
+interface PropsWithStyles extends Props {
+	style?: SupportedStyles
+}
+
+let selectedStyle: SupportedStyles = 'default';
+
+const config = {
+	default: {
+		group: {
+			className: 'c-tab-item',
+			selected: 'c-tab-item-selected',
+			noSelected: 'c-tab-item-no-selected'
+		},
+		list: {
+			className: 'c-tab-list'
+		}
+	},
+	minimal: {
+		group: {
+			className: 'c-tab-item-minimal',
+			selected: 'c-tab-item-selected-minimal',
+			noSelected: 'c-tab-item-no-selected-minimal'
+		},
+		list: {
+			className: 'c-tab-list-minimal'
+		}
+	}
+};
+
+
 const Tab = ({className, children}: Props) => {
 	return (
-		<Tabs className={({ selected }) => (`c-tab-item ${selected ? 'c-tab-item-selected' : 'c-tab-item-no-selected'} ${className}`)}>
+		<Tabs className={({ selected }) => (`${config[selectedStyle].group.className} ${selected ? config[selectedStyle].group.selected : config[selectedStyle].group.noSelected} ${className}`)}>
 			{children}
 		</Tabs>
 	);
 };
 
-const Group = ({className, children}: Props) => {
+const Group = ({style, children}: PropsWithStyles) => {
+	selectedStyle = style || 'default';
+
 	return (
 		<Tabs.Group>
 			{children}
@@ -24,7 +58,7 @@ const Group = ({className, children}: Props) => {
 
 const List = ({className, children}: Props) => {
 	return (
-		<Tabs.List className={`c-tab-list ${className}`}>
+		<Tabs.List className={`${config[selectedStyle].list.className} ${className}`}>
 			{children}
 		</Tabs.List>
 	);
@@ -50,8 +84,13 @@ const defaultProps = {
 	className: ''
 };
 
+const defaultPropsWithStyle = {
+	className: '',
+	style: 'default'
+};
+
+Group.defaultProps = defaultPropsWithStyle;
 Tab.defaultProps = defaultProps;
-Group.defaultProps = defaultProps;
 List.defaultProps = defaultProps;
 Panel.defaultProps = defaultProps;
 Panels.defaultProps = defaultProps;

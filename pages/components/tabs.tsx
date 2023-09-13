@@ -6,6 +6,7 @@ import SyntaxHighlighter from 'react-syntax-highlighter';
 import { nord } from "react-syntax-highlighter/dist/cjs/styles/hljs";
 import { CopyIcon } from "lucide-react";
 import TabsExample from "@/components/pages/tabs/TabsExample";
+import Tab from "@/ui/tabs/Tab";
 
 const Tabs = () => {
 	const code = `import Tab from "@/ui/tabs/Tab";
@@ -120,6 +121,10 @@ export default TabsExample;`;
 				<div className="max-w-4xl mx-auto">
 					<h1 className='text-3xl font-bold'>Tab Component</h1>
 					<p>A set of layered sections of content known as tab panels that are displayed one at a time.</p>
+					<Tab.Group>
+
+					</Tab.Group>
+
 					<div className="my-8 px-8 py-16 md:px-32 md:py-24 border bg-white dark:bg-zinc-800 dark:border-zinc-700 rounded-md">
 						<TabsExample/>
 					</div>
